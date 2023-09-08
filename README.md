@@ -22,12 +22,16 @@ This is my Week 6 individual project for Epicodus -- course 'Intermediate JavaSc
 Generate an API key for ExchangeRate:
 
 - _Go to https://www.exchangerate-api.com/ using your internet browser._
-- _Sign up for an account, and sign in._
+
+- _Input your email address and click the "Get Free Key" button._
+
+- _You'll be prompted to create an account with your email, first name and a password. Agree to the terms of use and click "Get Started!"_
+
 - _Once you are signed in, locate the API Key generated for you. Keep this handy -- copied, ready to paste._
 
 Cloning the Repository:
 
-- _Clone the repository from the GitHub link: https://github.com/joncheng-dev/currency-exchanger_
+- _Clone the repository from the GitHub link: https://github.com/joncheng-dev/currency-exchanger-reloaded_
 - _Navigate to the project's root directory._
 
 - _In your code editor, navigate to your project root directory. Create a file named ".env"._
@@ -37,7 +41,6 @@ Cloning the Repository:
 - _Build the project using webpack using `$ npm run build`_
 
 - _Lint JavaScript files with `$ npm run lint`_
-- _Run tests using Jest with `$ npm run test`_
 
 - _Start the development server in your browser with `$ npm run start`_
 
