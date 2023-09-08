@@ -6,11 +6,13 @@ import FetchExchangeRateService from "./js/fetchExchangeRateService";
 // Business Logic
 function getConversion(amount, currency) {
   FetchExchangeRateService.fetchConversion(amount, currency).then(function (response) {
-    if (response.ok) {
-      console.log(`Index.js getConversion OK: ${response}`);
+    // console.log(`Response in getConversion: ${response}`);
+    if (response.result) {
+      console.log(`Index.js getConversion OK: ${response.result}`);
       showTargetCurrencyValue(response);
     } else {
-      console.log(`Index.js getConversion NOT: ${response}`);
+      // console.log(`Index.js Reject: response.ok: ${response.ok} response.status ${response.status}`);
+      // console.log(`Index.js getConversion NOT: ${response.result} ${response["error-type"]}`);
       showError(response);
     }
   });
@@ -28,8 +30,9 @@ function showError(request) {
 function handleFormSubmission(event) {
   event.preventDefault();
   const userEnteredAmount = document.getElementById("dollar-amount").value;
-  const userTargetCurrency = "KRW";
+  const userTargetCurrency = document.getElementById("target-currency").value;
   document.getElementById("dollar-amount").value = null;
+  document.getElementById("target-currency").value = null;
   getConversion(userEnteredAmount, userTargetCurrency);
 }
 

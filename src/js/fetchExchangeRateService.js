@@ -4,8 +4,8 @@ export default class FetchExchangeRateService {
       .then(function (response) {
         console.log(response);
         if (!response.ok) {
-          const errorMsg = `${response.status} ${response.statusText}`;
-          console.log(`Error: ${response.status} ${response.statusText}`);
+          const errorMsg = `${response.ok} ${response.status}`;
+          // console.log(`Error: ${response.ok} ${response.status}`);
           throw new Error(errorMsg);
         } else {
           console.log(`Success: ${response.status} ${response.statusText}`);
@@ -13,7 +13,7 @@ export default class FetchExchangeRateService {
         }
       })
       .catch(function (error) {
-        console.log(`Error - Catch: ${error}`);
+        // console.log(`Error - Catch: ${error}`);
         return error;
       });
   }
