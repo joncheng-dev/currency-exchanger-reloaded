@@ -2,36 +2,26 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
 import ConversionService from "./js/conversion-service";
-// import FetchExchangeRateService from "./js/fetch-exchange-rate-service";
 
 // Business Logic
 function getConversionResults(amount, currency) {
   let promise = ConversionService.getConversion(amount, currency);
-  promise.then(function () {
-    
+  promise.then(function (currencyArray) {
+    showTargetCurrencyValue(currencyArray);
+  }, function (errorArray) {
+    showError(errorArray);
   });
 }
-// function getConversion(amount, currency) {
-//   FetchExchangeRateService.fetchConversion(amount, currency).then(function (response) {
-//     console.log(`${response.result}`);
-//     if (response.result) {
-//       console.log(`Index.js getConversion OK: ${response.result}`);
-//       showTargetCurrencyValue(response);
-//     } else {
-//       console.log(`Index.js Reject: response.ok: ${response.ok} response.status ${response.status}`);
-//       console.log(`Index.js getConversion NOT: ${response.result} ${response["error-type"]}`);
-//       showError(response);
-//     }
-//   });
-// }
 
 // UI Logic
-function showTargetCurrencyValue(apiResponse) {
-  document.getElementById("results").innerText = apiResponse.conversion_result;
+function showTargetCurrencyValue(data) {
+  console.log(data);
+  document.getElementById("results").innerText = `Conversion Result: ${data[0].conversion_result} ${data[0].target_code}`;
 }
 
-function showError(request) {
-  document.getElementById("results").innerText = request.status;
+function showError(error) {
+  console.log(error);
+  document.getElementById("results").innerText = `Error. Status: ${error[0].status}. Type: ${error[1]["error-type"]}`;
 }
 
 function handleFormSubmission(event) {
@@ -40,7 +30,7 @@ function handleFormSubmission(event) {
   const userTargetCurrency = document.getElementById("target-currency").value;
   document.getElementById("dollar-amount").value = null;
   document.getElementById("target-currency").value = null;
-  getConversion(userEnteredAmount, userTargetCurrency);
+  getConversionResults(userEnteredAmount, userTargetCurrency);
 }
 
 function formLoader() {
