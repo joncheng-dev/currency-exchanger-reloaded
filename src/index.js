@@ -9,6 +9,7 @@ function getConversionResults(amount, currency) {
   promise.then(function (currencyArray) {
     showTargetCurrencyValue(currencyArray);
   }, function (errorArray) {
+    console.log(`Errors here: ${errorArray}`);
     showError(errorArray);
   });
 }
