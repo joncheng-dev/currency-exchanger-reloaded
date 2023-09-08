@@ -33,7 +33,14 @@ function showError(error) {
     }
   }
   outputToHtml += `Error. Status: ${error[0].status}. Type: ${error[1]["error-type"]} Message: ${customErrorMessage}`;
+  
+  let ulElement = document.createElement("ul");
+  let liElement = document.createElement("li");
+  ulElement.append(liElement);
+  liElement.append(`Status: ${error[0].status}`);
+  
   document.getElementById("results").innerText = outputToHtml;
+  document.getElementById("results").append(ulElement);
 }
 
 function handleFormSubmission(event) {
