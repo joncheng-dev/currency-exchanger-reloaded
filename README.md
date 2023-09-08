@@ -46,8 +46,7 @@ Cloning the Repository:
 
 ## Known Bugs
 
-- _Any known issues_
-- _should go here_
+- _Site not currently optimized for smaller screens or mobile._
 
 ## License
 
