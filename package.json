@@ -1,7 +1,7 @@
 {
-  "name": "template-for-projects",
+  "name": "currency-exchanger",
   "version": "1.0.0",
-  "description": "* _List all_\r * _the major technologies_\r * _you used in your project_\r * _here_",
+  "description": "* HTML\r * CSS\r * JavaScript\r * Bootstrap\r * Node Package Manager\r * Webpack\r * Babel\r * Jest\r * ESLint",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=development",

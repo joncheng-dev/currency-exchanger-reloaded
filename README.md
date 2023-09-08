@@ -1,8 +1,8 @@
-# (Application Name)
+# Currency Exchanger
 
-#### (Brief Description of Application)
+#### App for currency exchange. Enter an amount in U.S. dollars, choose which currency to convert to, submit, and receive your results! Up to date results provided by ExchangeRate-API.
 
-#### By (Your Name Here)
+#### By Jonathan Cheng
 
 ## Technologies Used
 
@@ -11,17 +11,34 @@
 - _JavaScript_
 - _NodeJS v16.13.1_
 - _npm v8.1.2_
+- _ExchangeRate-API_
 
 ## Description
 
+This is my Week 6 individual project for Epicodus -- course 'Intermediate JavaScript' -- with emphasis on asynchronous code. This week we focused on making calls to 3rd party APIs, parsing the results, and displaying to the UI. Also of focus, error handling -- so that we'd be prepared when something does not pan out with the API call. We saw a few different approaches to asynchronous code used in JavaScript -- callbacks, XMLHttpRequest, promises, fetch API, and async / await.
+
 ## Setup/Installation Requirements
 
-- _Clone the repository from the GitHub:_
+Generate an API key for ExchangeRate:
+
+- _Go to https://www.exchangerate-api.com/ using your internet browser._
+- _Sign up for an account, and sign in._
+- _Once you are signed in, locate the API Key generated for you. Keep this handy -- copied, ready to paste._
+
+Cloning the Repository:
+
+- _Clone the repository from the GitHub link: https://github.com/joncheng-dev/currency-exchanger_
 - _Navigate to the project's root directory._
+
+- _In your code editor, navigate to your project root directory. Create a file named ".env"._
+- _Open up ".env" and save in the first line: `API_KEY=[your api key here]` omitting the square brackets []_
+
 - _In your terminal, run `$ npm install` from the root directory to install all packages._
 - _Build the project using webpack using `$ npm run build`_
+
 - _Lint JavaScript files with `$ npm run lint`_
 - _Run tests using Jest with `$ npm run test`_
+
 - _Start the development server in your browser with `$ npm run start`_
 
 ## Known Bugs
@@ -39,4 +56,4 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-Copyright (c) _year_ _name_
+Copyright (c) _2023_ _Jonathan Cheng_

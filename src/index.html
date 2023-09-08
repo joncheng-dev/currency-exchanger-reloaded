@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Shape Tracker</title>
+    <title>Currency Exchanger</title>
   </head>
   <body>
-    <h3>Enter three lengths to determine if they can make a triangle.</h3>
-    <form id="triangle-checker-form">
-      <label for="length1">Enter a number:</label>
-      <input id="length1" type="number" />
-      <label for="length2">Enter a number:</label>
-      <input id="length2" type="number" />
-      <label for="length3">Enter a number:</label>
-      <input id="length3" type="number" />
-      <button type="submit">Submit</button>
+    <h3>Enter an amount in U.S. dollars, select a target currency, and click Convert to see results. Current exchange rates are used.</h3>
+    <form id="user-input-form">
+      <label for="dollar-amount">Enter a number:</label>
+      <input id="dollar-amount" type="number" name="dollar-amount" />
+      <button type="submit">Convert</button>
     </form>
-    <div id="response"></div>
+    <div id="results"></div>
   </body>
 </html>
