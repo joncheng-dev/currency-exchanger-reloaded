@@ -1,3 +1,16 @@
 body {
   background-color: lightblue;
 }
+
+.button {
+  width: 100px;
+  height: 30px;
+  border: 0px none #444444;
+  padding: 3px;
+  margin: 0px;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  color: #222222;
+  background-color: #E3E3E3; 
+}

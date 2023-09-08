@@ -4,14 +4,28 @@
     <title>Currency Exchanger</title>
   </head>
   <body>
-    <h3>Enter an amount in U.S. dollars, select a target currency, and click Convert to see results. Current exchange rates are used.</h3>
-    <form id="user-input-form">
-      <label for="dollar-amount">Enter a number:</label>
-      <input id="dollar-amount" type="number" name="dollar-amount" />
-      <label for="target-currency">Enter a currency to convert to:</label>
-      <input id="target-currency" type="text" name="target-currency" />
-      <button type="submit">Convert</button>
-    </form>
-    <div id="results"></div>
+    <div class="container">
+      <h1>Currency Exchanger</h1>
+      <h3>Enter an amount in U.S. dollars, select a target currency, and click Convert to see results. Current exchange rates are used.</h3>
+      <div class="row">
+        <div class="col-6">
+          <h3>User Input</h3>
+          <p>Enter:</p>
+          <form id="user-input-form">
+            <input id="dollar-amount" type="number" name="dollar-amount" required/>
+            <label for="dollar-amount">A value in US dollars</label>
+            <br/>
+            <input id="target-currency" type="text" name="target-currency" required/>
+            <label for="target-currency">A currency to convert to</label>
+            <br/>
+            <button type="submit" class="button">Convert</button>
+          </form>          
+        </div>   
+        <div class="col-6">
+          <h3>Results</h3>
+          <div id="results"></div>
+        </div>     
+      </div>
+    </div>
   </body>
 </html>
