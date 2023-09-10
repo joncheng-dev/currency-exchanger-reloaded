@@ -7,15 +7,17 @@ import ConversionService from "./js/conversion-service";
 function getConversionResults(amount, currency) {
   let promise = ConversionService.getConversion(amount, currency);
   promise.then(function (currencyArray) {
+    console.log(`currencyArray`, currencyArray);
     showTargetCurrencyValue(currencyArray);
   }, function (errorArray) {
+    console.log(`fxnCallReject`, errorArray);
     showError(errorArray);
   });
 }
 
 // UI Logic
 function showTargetCurrencyValue(data) {
-  document.getElementById("results").innerText = `Conversion Result: ${data[1]} USD = ${data[0].conversion_result} ${data[0].target_code}`;
+  document.getElementById("results").innerText = `Conversion Result: ${data[2]} USD = ${data[1].conversion_result} ${data[1].target_code}`;
 }
 
 function showError(error) {
@@ -31,6 +33,8 @@ function showError(error) {
     } else if (error[1]["error-type"] === "inactive-account") {
       customErrorMessage = "Please check that your API key is active and functioning. Your email address may not have been confirmed.";
     }
+  } else {
+    customErrorMessage = "Status is 0";
   }
   outputToHtml += `Error. Status: ${error[0].status}. Type: ${error[1]["error-type"]} Message: ${customErrorMessage}`;
   
