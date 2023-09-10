@@ -13,31 +13,54 @@ body {
   font-weight: normal;
   font-style: normal;
   color: #222222;
-  background-color: #E3E3E3; 
+  background-color: #e3e3e3;
 }
 
-.col-6 {
-  width: 40%;
-  margin: 0% 1% 0% 1%;
+/* .col-4 {
+  width: 30%;
+  margin: 0%;
   padding: 40px;
   box-sizing: border-box;
   border-radius: 10px;
-}
+} */
 
-#form-box h3 {
+h3 {
   text-align: center;
 }
 
 #form-box {
-  background: rgba(10,10,70,.5);
-  box-shadow: 0 15px 25px rgba(40,40,40,.4);
-}
-
-#results-box h3 {
-  text-align: center;
+  background: rgba(10, 10, 70, 0.5);
+  box-shadow: 0 15px 25px rgba(40, 40, 40, 0.4);
 }
 
 #results-box {
-  background: rgba(60,60,70,.5);
-  box-shadow: 0 15px 25px rgba(40,40,40,.4);  
+  background: rgba(60, 60, 70, 0.5);
+  box-shadow: 0 15px 25px rgba(40, 40, 40, 0.4);
+}
+
+#currency-codes-box {
+  background: rgba(120, 120, 70, 0.5);
+  box-shadow: 0 15px 25px rgba(40, 40, 40, 0.4);
+}
+
+#currency-codes-table {
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #222222;
+  border-collapse: separate;
+  background-color: #ffffff;
+  color: #222222;
+}
+
+#currency-codes-table th,
+#currency-codes-table td {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #222222;
+}
+
+#currency-codes-table thead {
+  background-color: #ffffff;
+  color: #222222;
 }

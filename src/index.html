@@ -6,25 +6,44 @@
   <body>
     <div class="container">
       <h1>Currency Exchanger</h1>
-      <h5>Enter an amount in U.S. dollars, enter a target currency, and click Convert to see results. Current exchange rates are used. See list of <a href="https://www.exchangerate-api.com/docs/supported-currencies">supported currencies</a>.</h5>
+      <h5>
+        Enter an amount in U.S. dollars, enter a target currency, and click Convert to see results. Current exchange rates are used. See list of
+        <a href="https://www.exchangerate-api.com/docs/supported-currencies">supported currencies</a>.
+      </h5>
       <div class="row">
-        <div class="col-6" id="form-box">
+        <div class="col-6" id="currency-codes-box">
+          <h3>Currency Codes</h3>
+          <div id="accepted-codes">
+            <table id="currency-codes-table">
+              <thead>
+                <tr>
+                  <th>Currency Code</th>
+                  <th>Currency Name</th>
+                  <th>Country</th>
+                </tr>
+                <tbody id="currency-codes-table-body">
+                </tbody>
+              </thead>
+            </table>
+          </div>
+        </div>
+        <div class="col-3" id="form-box">
           <h3>User Input</h3>
           <p>Enter:</p>
           <form id="user-input-form">
-            <input id="dollar-amount" type="number" name="dollar-amount" min="1" value="1" required/>
+            <input id="dollar-amount" type="number" name="dollar-amount" min="1" value="1" required />
             <label for="dollar-amount">A value in US dollars</label>
-            <br/>
-            <input id="target-currency" type="text" name="target-currency" value="KRW" required/>
+            <br />
+            <input id="target-currency" type="text" name="target-currency" value="KRW" required />
             <label for="target-currency">A currency to convert to</label>
-            <br/>
+            <br />
             <button type="submit" class="button">Convert</button>
-          </form>          
-        </div>   
-        <div class="col-6" id="results-box">
+          </form>
+        </div>
+        <div class="col-3" id="results-box">
           <h3>Results</h3>
           <div id="results"></div>
-        </div>     
+        </div>
       </div>
     </div>
   </body>

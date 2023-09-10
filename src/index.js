@@ -2,17 +2,19 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
 import ConversionService from "./js/conversion-service";
+import { currencyCodes } from "./js/currency-codes";
 
 // Business Logic
 function getConversionResults(amount, currency) {
   let promise = ConversionService.getConversion(amount, currency);
-  promise.then(function (currencyArray) {
-    console.log(`currencyArray`, currencyArray);
-    showTargetCurrencyValue(currencyArray);
-  }, function (errorArray) {
-    console.log(`fxnCallReject`, errorArray);
-    showError(errorArray);
-  });
+  promise.then(
+    function (currencyArray) {
+      showTargetCurrencyValue(currencyArray);
+    },
+    function (errorArray) {
+      showError(errorArray);
+    }
+  );
 }
 
 // UI Logic
@@ -23,7 +25,9 @@ function showTargetCurrencyValue(data) {
 function showError(error) {
   let outputToHtml = "";
   let customErrorMessage;
-  if (error[0].status === 400) {
+  if (error[0].status === 0) {
+    customErrorMessage = "Bad URL request.";
+  } else if (error[0].status === 400) {
     customErrorMessage = "Request does not follow the accepted structure. Please refer to the three character country codes.";
   } else if (error[0].status === 404) {
     customErrorMessage = "Supplied currency code not supported. Please see supported currencies.";
@@ -33,19 +37,32 @@ function showError(error) {
     } else if (error[1]["error-type"] === "inactive-account") {
       customErrorMessage = "Please check that your API key is active and functioning. Your email address may not have been confirmed.";
     }
-  } else {
-    customErrorMessage = "Status is 0";
   }
-  outputToHtml += `Error. Status: ${error[0].status}. Type: ${error[1]["error-type"]} Message: ${customErrorMessage}`;
-  
-  let ulElement = document.createElement("ul");
-  let liElement = document.createElement("li");
-  ulElement.append(liElement);
-  liElement.append(`Status: ${error[0].status}`);
-  
+  outputToHtml += `Error Status: ${error[0].status}. Message: ${customErrorMessage}`;
   document.getElementById("results").innerText = outputToHtml;
-  document.getElementById("results").append(ulElement);
 }
+
+function showCurrencyCodesTable(data) {
+  let addToTableBody = document.getElementById("currency-codes-table-body");
+  for (let i = 0; i < data.length; i++) {
+    let currentRow = `<tr>
+                        <td>${data[i][0]}</td>
+                        <td>${data[i][1]}</td>
+                        <td>${data[i][2]}</td>
+                      </tr>`;
+    addToTableBody.innerHTML += currentRow;
+  }
+}
+
+// function showError(error) {
+//   let ulElement = document.createElement("ul");
+//   let liElement = document.createElement("li");
+//   ulElement.append(liElement);
+//   liElement.append(`Status: ${error[0].status}`);
+
+//   document.getElementById("results").innerText = outputToHtml;
+//   document.getElementById("results").append(ulElement);
+// }
 
 function handleFormSubmission(event) {
   event.preventDefault();
@@ -57,6 +74,7 @@ function handleFormSubmission(event) {
 }
 
 function formLoader() {
+  showCurrencyCodesTable(currencyCodes);
   let userForm = document.getElementById("user-input-form");
   userForm.addEventListener("submit", handleFormSubmission);
 }

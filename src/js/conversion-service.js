@@ -2,7 +2,7 @@ export default class ConversionService {
   static getConversion(usdAmount, targetCurrency) {
     return new Promise(function (resolve, reject) {
       let request = new XMLHttpRequest();
-      const url = `https://v6.exchangerate-api.com/v7/${process.env.API_KEY}/pair/USD/${targetCurrency}/${usdAmount}`;
+      const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/${targetCurrency}/${usdAmount}`;
       request.addEventListener("loadend", function () {
         try {
           let response = JSON.parse(this.responseText);
@@ -12,8 +12,6 @@ export default class ConversionService {
             reject([this, response, usdAmount, targetCurrency]);
           }
         } catch (errorMessage) {
-          console.log(`Catch block`, errorMessage);
-          console.log(`Catch block`, this);
           reject([this]);
         }
 
