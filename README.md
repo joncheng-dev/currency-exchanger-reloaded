@@ -15,7 +15,7 @@
 
 ## Description
 
-This is my Week 6 individual project for Epicodus -- course 'Intermediate JavaScript' -- with emphasis on asynchronous code. This week we focused on making calls to 3rd party APIs, parsing the results, and displaying to the UI. Also of focus, error handling -- so that we'd be prepared when something does not pan out with the API call. We saw a few different approaches to asynchronous code used in JavaScript -- callbacks, XMLHttpRequest, promises, fetch API, and async / await.
+This is my Week 6 individual project for Epicodus -- course 'Intermediate JavaScript' -- with emphasis on asynchronous code. This week we focused on making calls to 3rd party APIs, parsing the results, and displaying to the UI. Also of focus is error handling -- when something does not pan out with the API call. We saw a few different approaches to asynchronous code used in JavaScript -- callbacks, XMLHttpRequest, promises, fetch API, and async / await.
 
 ## Setup/Installation Requirements
 
@@ -43,6 +43,10 @@ Cloning the Repository:
 - _Lint JavaScript files with `$ npm run lint`_
 
 - _Start the development server in your browser with `$ npm run start`_
+
+## Alternatively
+
+See the site on GitHub Pages directly: https://joncheng-dev.github.io/currency-exchanger-reloaded/
 
 ## Known Bugs
 
