@@ -18,7 +18,9 @@ function getConversionResults(amount, currency) {
 
 // UI Logic
 function showTargetCurrencyValue(data) {
-  document.getElementById("results").innerText = `Conversion Result: ${data[2]} USD = ${data[1].conversion_result} ${data[1].target_code}`;
+  document.getElementById(
+    "results"
+  ).innerHTML = `<u>Conversion Result:</u><br/> ${data[2]} USD = ${data[1].conversion_result} ${data[1].target_code}`;
 }
 
 function showError(error) {
@@ -29,30 +31,22 @@ function showError(error) {
   } else if (error[0].status === 400) {
     customErrorMessage = "Request does not follow the accepted structure. Please refer to the three character country codes.";
   } else if (error[0].status === 404) {
-    customErrorMessage = "Supplied currency code not supported. Please see supported currencies.";
+    customErrorMessage = "Supplied currency code not supported. Please use a supported currency. Refer to the table on the left.";
   } else if (error[0].status === 403) {
     if (error[1]["error-type"] === "invalid-key") {
-      customErrorMessage = "Please check that the API key in the .env file is inputted correctly and accurately.";
+      customErrorMessage = "Invalid API key. Please check that the API key in the .env file is inputted correctly and accurately.";
     } else if (error[1]["error-type"] === "inactive-account") {
-      customErrorMessage = "Please check that your API key is active and functioning. Your email address may not have been confirmed.";
+      customErrorMessage =
+        "Inactive API account. Please check that your API key is active and functioning. Your email address may not have been confirmed.";
     }
   }
-  outputToHtml += `Error Status: ${error[0].status}. Message: ${customErrorMessage}`;
-  document.getElementById("results").innerText = outputToHtml;
+  outputToHtml += `<u>Error Status:</u><br/> ${error[0].status}<br/><br/><u>Message:</u><br/> ${customErrorMessage}`;
+  document.getElementById("results").innerHTML = outputToHtml;
 }
-
-// function showError(error) {
-//   let ulElement = document.createElement("ul");
-//   let liElement = document.createElement("li");
-//   ulElement.append(liElement);
-//   liElement.append(`Status: ${error[0].status}`);
-
-//   document.getElementById("results").innerText = outputToHtml;
-//   document.getElementById("results").append(ulElement);
-// }
 
 function handleFormSubmission(event) {
   event.preventDefault();
+  document.getElementById("results").innerHTML = null;
   const userEnteredAmount = document.getElementById("dollar-amount").value;
   const userTargetCurrency = document.getElementById("target-currency").value;
   document.getElementById("dollar-amount").value = null;

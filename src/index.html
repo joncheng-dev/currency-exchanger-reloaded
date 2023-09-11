@@ -838,7 +838,7 @@
           <h3>Conversion Form</h3>
           <form id="user-input-form">
             <input id="dollar-amount" type="number" name="dollar-amount" min="1" required />
-            <label class="dollar-amount" for="dollar-amount">Value in US dollars</label>
+            <label class="dollar-amount-label" for="dollar-amount">Value in US dollars</label>
             <br />
             <input id="target-currency" type="text" name="target-currency" required />
             <label for="target-currency">Currency to convert to</label>
@@ -848,7 +848,8 @@
         </div>
         <div class="col-4" id="results-box">
           <h3>Conversion Results</h3>
-          <div id="results"></div>
+          <div id="results">
+          </div>
         </div>
       </div>
     </div>

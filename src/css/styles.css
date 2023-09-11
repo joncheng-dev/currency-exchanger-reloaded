@@ -21,6 +21,10 @@ h3 {
   background-color: lightgray;
 }
 
+.dollar-amount-label {
+  margin-bottom: 16px;
+}
+
 #currency-codes-box {
   background: rgba(120, 120, 70, 0.5);
   box-shadow: 0 15px 25px rgba(40, 40, 40, 0.4);
@@ -73,8 +77,4 @@ h3 {
   font-size: 15px;
   font-weight: 300;
   color: #8d8d8d;
-}
-
-.dollar-amount {
-  margin-bottom: 16px;
 }
