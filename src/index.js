@@ -2,7 +2,6 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
 import ConversionService from "./js/conversion-service";
-import { currencyCodes } from "./js/currency-codes";
 
 // Business Logic
 function getConversionResults(amount, currency) {
@@ -42,18 +41,6 @@ function showError(error) {
   document.getElementById("results").innerText = outputToHtml;
 }
 
-function showCurrencyCodesTable(data) {
-  let addToTableBody = document.getElementById("currency-codes-table-body");
-  for (let i = 0; i < data.length; i++) {
-    let currentRow = `<tr>
-                        <td>${data[i][0]}</td>
-                        <td>${data[i][1]}</td>
-                        <td>${data[i][2]}</td>
-                      </tr>`;
-    addToTableBody.innerHTML += currentRow;
-  }
-}
-
 // function showError(error) {
 //   let ulElement = document.createElement("ul");
 //   let liElement = document.createElement("li");
@@ -74,7 +61,6 @@ function handleFormSubmission(event) {
 }
 
 function formLoader() {
-  showCurrencyCodesTable(currencyCodes);
   let userForm = document.getElementById("user-input-form");
   userForm.addEventListener("submit", handleFormSubmission);
 }

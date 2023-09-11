@@ -49,8 +49,9 @@ h3 {
   border-style: solid;
   border-color: #222222;
   border-collapse: separate;
-  background-color: #ffffff;
+  background-color: #ffffff40;
   color: #222222;
+  font-size: smaller;
 }
 
 #currency-codes-table th,
@@ -61,6 +62,6 @@ h3 {
 }
 
 #currency-codes-table thead {
-  background-color: #ffffff;
+  background-color: #ffffff20;
   color: #222222;
 }
